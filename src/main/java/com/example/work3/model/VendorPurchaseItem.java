@@ -1,7 +1,6 @@
 package com.example.work3.model;
 
 import jakarta.persistence.*;
-import java.math.BigDecimal;
 
 @Entity
 @Table(name = "VendorPurchaseItems")
@@ -14,7 +13,7 @@ public class VendorPurchaseItem {
     public String name;
 
     @Column(name = "Item_Price", nullable = false)
-    private BigDecimal price;
+    private float price;
 
     @Column(name = "Item_Quantity", nullable = false)
     private int quantity;
@@ -25,7 +24,7 @@ public class VendorPurchaseItem {
 
     public VendorPurchaseItem() {}
 
-    public VendorPurchaseItem(VendorPurchase vendorPurchase, String itemName, int quantity, BigDecimal price) {
+    public VendorPurchaseItem(VendorPurchase vendorPurchase, String itemName, int quantity, float price) {
         this.vendorPurchase = vendorPurchase;
         this.name = itemName;
         this.price = price;
@@ -40,10 +39,10 @@ public class VendorPurchaseItem {
 
     public String getItemName() {return name;}
     public int getQuantity() {return quantity;}
-    public BigDecimal getPrice() {return price;}
+    public float getPrice() {return price;}
 
     public void setVendorPurchase(VendorPurchase vendorPurchase) { this.vendorPurchase = vendorPurchase; }
     public void setItemName(String name) { this.name = name; }
     public void setQuantity(int quantity) { this.quantity = quantity; }
-    public void setPrice(BigDecimal price) { this.price = price; }
+    public void setPrice(float price) { this.price = price; }
 }

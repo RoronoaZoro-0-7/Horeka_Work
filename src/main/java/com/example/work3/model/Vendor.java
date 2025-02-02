@@ -45,4 +45,8 @@ public class Vendor {
 
     @Column(name = "Contact_Name", nullable = false, length = 255)
     private String contactName;
+
+    public String getName(){
+        return vendorName;
+    }
 }
